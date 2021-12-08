@@ -14,5 +14,6 @@ f_handler.setFormatter(f_format)
 # Add handlers to the logger
 logger.addHandler(c_handler)
 logger.addHandler(f_handler)
+logger.info('Onfo')
 logger.warning('This is a warning')
 logger.error('This is an error')

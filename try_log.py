@@ -1,12 +1,15 @@
 import logging
 import os
 from datetime import datetime
+from os.path import dirname, abspath
 
+
+ROOT_DIR = dirname(abspath(__file__))
 now = datetime.now()
-name_file_log = str(now.strftime("%d %b %Y - %H %M %S"))+" test_log.txt"
+name_file_log = str(now.strftime("%d %b %Y - %H %M %S"))+" test_log.log"
 
 
-logging.basicConfig(filename=(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'logs_files', name_file_log)),
+logging.basicConfig(filename=(ROOT_DIR+'\\logs_files\\' + name_file_log),
                     filemode='w',
                     format='%(name)s - %(levelname)s - %(message)s')
 
